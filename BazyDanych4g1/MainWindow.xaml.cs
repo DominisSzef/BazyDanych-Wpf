@@ -26,6 +26,9 @@ public partial class MainWindow : Window
             film.Category = _context.Categories.ToList().FirstOrDefault(category => category.Id == film.CategoryId)
         );
         
+        
         data.ItemsSource = _context.Films.ToList();
+        category.ItemsSource = _context.Categories.Select(c => c.Name).ToList();
+        category.SelectedIndex = 0;
     }
 }

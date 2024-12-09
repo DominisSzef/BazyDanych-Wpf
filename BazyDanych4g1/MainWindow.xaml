@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:BazyDanych4g1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+     <StackPanel>
     <Grid>
+        
         <ListView x:Name="data">
             <ListView.View>
             <GridView>
@@ -17,4 +19,12 @@
                </ListView.View>
         </ListView>
     </Grid>
+         
+         <WrapPanel>
+             <TextBox x:Name="filmName" Width="100"></TextBox>
+             <TextBox x:Name="yearFilm" Width="40"></TextBox>
+             <ComboBox x:Name="category" Width="100" ></ComboBox>
+         </WrapPanel>
+     
+     </StackPanel>
 </Window>
