@@ -16,8 +16,16 @@ namespace BazyDanych4g1;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private dbContext _context = new dbContext();
     public MainWindow()
     {
         InitializeComponent();
+        
+        _context.Films.ToList().ForEach(film =>
+        
+            film.Category = _context.Categories.ToList().FirstOrDefault(category => category.Id == film.CategoryId)
+        );
+        
+        data.ItemsSource = _context.Films.ToList();
     }
 }
