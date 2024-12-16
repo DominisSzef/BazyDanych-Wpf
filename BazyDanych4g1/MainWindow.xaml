@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BazyDanych4g1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="360">
      <StackPanel>
     <Grid>
         
@@ -15,16 +15,28 @@
                 <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
                 <GridViewColumn Header="Year" DisplayMemberBinding="{Binding Year}"></GridViewColumn>
                 <GridViewColumn Header="Category Name" DisplayMemberBinding="{Binding Category.Name}"></GridViewColumn>
+                
             </GridView>
                </ListView.View>
         </ListView>
     </Grid>
-         
+         <ComboBox x:Name="categoryFilter" DisplayMemberPath="Name"  IsEditable="True" SelectionChanged="CategoryFilter_OnSelectionChanged"></ComboBox>
          <WrapPanel>
              <TextBox x:Name="filmName" Width="100"></TextBox>
              <TextBox x:Name="yearFilm" Width="40"></TextBox>
              <ComboBox x:Name="category" Width="100" ></ComboBox>
+             <Button x:Name="addFilm" Width="auto" Click="addFilm_Click"> Dodaj </Button>
+             
          </WrapPanel>
-     
+         <Button x:Name="delte"  Click="Delte_OnClick"> Usun </Button>
+         <Button x:Name="Edit" Click="Edit_OnClick">Edit</Button>
+         <WrapPanel x:Name="wrapEdit" Visibility="Collapsed">
+             <TextBox x:Name="filmNameEdit" Width="100"></TextBox>
+             <TextBox x:Name="yearFilmEdit" Width="40"></TextBox>
+             <ComboBox x:Name="categoryEdit" Width="100" ></ComboBox>
+             <Button x:Name="Save" Width="auto" Click="Save_OnClick"> Dodaj </Button>
+             
+         </WrapPanel>
+         
      </StackPanel>
 </Window>
